@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Producto</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <h1 class="my-4">Buscar Producto</h1>
+        <form action="/buscar" method="post">
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" class="form-control" id="id" name="id">
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+            <a href="/" class="btn btn-secondary">Volver</a>
+        </form>
+        {% if producto %}
+        <h2 class="my-4">Producto Encontrado</h2>
+        <ul class="list-group">
+            <li class="list-group-item">ID: {{ producto.id }}</li>
+            <li class="list-group-item">Nombre: {{ producto.nombre }}</li>
+            <li class="list-group-item">Precio: {{ producto.precio }}</li>
+            <li class="list-group-item">Cantidad: {{ producto.cantidad }}</li>
+        </ul>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.com/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
